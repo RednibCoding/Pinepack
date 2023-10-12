@@ -170,7 +170,6 @@ For example, in the component template:
 ```
 
 Here, `@title` serves as a placeholder that will be replaced with the value of the title variable defined in the component's script section.
-v
 
 ```html
 <script>
