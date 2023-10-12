@@ -1,0 +1,51 @@
+
+---- add <Slot /> where a custom component can receive html template
+
+example:
+Normaly you "instantiate" a custom tag like this: <myCustomTag />
+
+myCustomTag.html:
+<template>
+    <h1>Hello World</h1>
+</template>
+
+with a slot you can write the component like this:
+<template>
+    <Slot />
+</template>
+
+then you can "instantiate" a custom component like this
+
+<myCustomTag>
+    <h1>Hello World</h1>
+</myCustomTag>
+
+The <Slot /> in the component definition will be replaced with the contents inside the opening myCustomTag and closing myCustomTag which will result in:
+<template>
+    <h1>Hello World</h1>
+</template>
+
+
+---- add possibility to define and pass attributes to a custom component
+
+example:
+
+index.html:
+<body>
+    <my-component title="Hello World" />
+</body>
+
+my-component.html:
+
+<template>
+    <h1>@title</h1>
+</template>
+
+<script>
+    // this will be considered as an attribute of this component
+    export title = ""
+</script>
+
+---- reactive values
+
+as soon as a variable is defined as reactive, changing the variable will result in a rerender everywhere where the variable is used
