@@ -13,8 +13,8 @@ void main(List<String> args) {
         negatable: false,
         help: "Generate human-readable code instead of minified code");
 
-  final argss = ["html"];
-  final ArgResults argResults = argParser.parse(argss);
+  // final argss = ["html"];
+  final ArgResults argResults = argParser.parse(args);
 
   if (argResults.rest.isEmpty) {
     printUsage(argParser);
@@ -24,7 +24,7 @@ void main(List<String> args) {
   final String path = argResults.rest.first;
   // final pretty = argResults["pretty"];
 
-  // Buffers to hold aggregated JS and CSS
+  // Maps to hold aggregated JS and CSS
   final jsComponents = <String, String>{};
   final cssComponents = <String, String>{};
 
